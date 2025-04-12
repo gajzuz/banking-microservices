@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  account_service:
+    build: ./account-service
+    ports:
+      - "5001:5001"
+    networks:
+      - banknet
+
+  transaction_service:
+    build: ./transaction-service
+    ports:
+      - "5002:5002"
+    depends_on:
+      - account_service
+    networks:
+      - banknet
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    networks:
+      - banknet
+
+networks:
+  banknet:
+    driver: bridge

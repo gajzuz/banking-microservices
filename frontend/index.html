@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mini Banking App</title>
+</head>
+<body>
+  <h1>Mini Banking App</h1>
+
+  <h2>Create Account</h2>
+  <input id="name" placeholder="Name" />
+  <input id="balance" placeholder="Initial Balance" type="number" />
+  <button onclick="createAccount()">Create</button>
+
+  <h2>All Accounts</h2>
+  <button onclick="loadAccounts()">Load Accounts</button>
+  <ul id="accountList"></ul>
+
+  <h2>Create Transaction</h2>
+  <input id="tx_account_id" placeholder="Account ID" type="number" />
+  <select id="tx_type">
+    <option value="deposit">Deposit</option>
+    <option value="withdrawal">Withdrawal</option>
+  </select>
+  <input id="tx_amount" placeholder="Amount" type="number" />
+  <button onclick="createTransaction()">Submit</button>
+
+  <h2>All Transactions</h2>
+  <button onclick="loadTransactions()">Load Transactions</button>
+  <ul id="transactionList"></ul>
+
+  <script src="app.js"></script>
+</body>
+</html>
